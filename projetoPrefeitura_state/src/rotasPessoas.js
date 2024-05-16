@@ -1,7 +1,7 @@
 import express from 'express'
 const app = express();
 import cors from "cors";
-import conection from './db.js';
+import connection from './db.js';
 import { getAllPessoas, createPessoa, updatePessoa, deletePessoa } from "./pessoaControler.js";
 
 

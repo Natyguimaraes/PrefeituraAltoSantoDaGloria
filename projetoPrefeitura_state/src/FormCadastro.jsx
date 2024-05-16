@@ -1,9 +1,7 @@
-import { useState } from 'react'
-import './App.css'
-
+import { useState } from 'react';
+import './App.css';
 
 function FormCadastro() {
-
   const [formValores, setFormValores] = useState({
     nome: '',
     cpf: '',
@@ -13,7 +11,7 @@ function FormCadastro() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormValores(prevState => ({
+    setFormValores((prevState) => ({
       ...prevState,
       [name]: value
     }));
@@ -38,49 +36,58 @@ function FormCadastro() {
 
       const json = await response.json();
       console.log(json);
-
     } catch (err) {
-      console.err("Erro ao enviar os dados", err);
+      console.error("Erro ao enviar os dados", err); // Corrigido para console.error
     }
-
   };
 
   return (
     <>
-
       <div>
-       
-
-          <div className="Container">
-
-            <div className="form">
-              <h1> Cadastre-se </h1>
-              <form onSubmit={handleSubmit}>
-                Nome:
-                <input type="text" name="nome" value={formValores.nome} onChange={handleChange} />
-                <br />
-
-                CPF:
-                <input type="text" name="cpf" value={formValores.cpf} onChange={handleChange} />
-                <br />
-
-                Telefone:
-                <input type="text" name="telefone" value={formValores.telefone} onChange={handleChange} />
-                <br />
-
-                Data de Cadastro:
-                <input type="date" name="data_cadastro" value={formValores.data_cadastro} onChange={handleChange} />
-                <br />
-
-                <button type="submit"> CADASTRAR </button>
-              </form>
-             
-            </div>
+        <div className="Container">
+          <div className="form">
+            <h1> Cadastre-se </h1>
+            <form onSubmit={handleSubmit}>
+              Nome:
+              <input
+                type="text"
+                name="nome"
+                value={formValores.nome}
+                onChange={handleChange}
+              />
+              <br />
+              CPF:
+              <input
+                type="text"
+                name="cpf"
+                value={formValores.cpf}
+                onChange={handleChange}
+              />
+              <br />
+              Telefone:
+              <input
+                type="text"
+                name="telefone"
+                value={formValores.telefone}
+                onChange={handleChange}
+              />
+              <br />
+              Data de Cadastro:
+              <input
+                type="date"
+                name="data_cadastro"
+                value={formValores.data_cadastro}
+                onChange={handleChange}
+              />
+              <br />
+              <button type="submit"> CADASTRAR </button>
+            </form>
           </div>
-
+        </div>
       </div>
     </>
   );
 }
 
 export default FormCadastro;
+
