@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './App.css'
-import FormCadastro from './FormCadastro.jsx'
+import './views/styles/App.css'
+import App from './views/App'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <FormCadastro />
+    <App />
   </React.StrictMode>,
 )

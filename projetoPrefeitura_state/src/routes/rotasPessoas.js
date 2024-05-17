@@ -1,8 +1,8 @@
 import express from 'express'
 const app = express();
 import cors from "cors";
-import connection from './db.js';
-import { getAllPessoas, createPessoa, updatePessoa, deletePessoa } from "./pessoaControler.js";
+import connection from '../database/db.js';
+import { getAllPessoas, createPessoa, updatePessoa, deletePessoa } from "../controllers/pessoaControler.js";
 
 
 app.use(express.json());

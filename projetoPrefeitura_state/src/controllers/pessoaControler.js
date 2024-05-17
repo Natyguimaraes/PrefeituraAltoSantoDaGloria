@@ -1,12 +1,12 @@
-import {create, read, update, deletePes} from './pessoaModel.js';
+import {create, read, update, deletePes} from '../models/pessoaModel.js';
 
 //Realizando insert (create)
 
 export async function createPessoa(req, res){
-    const { nome, cpf, telefone, data_cadastro} = req.body;
-    console.log('Dados recebidos do frontend:', {nome, cpf, telefone, data_cadastro});
+    const { nome, cpf, telefone, data_cadastro, cep, logradouro, bairro, cidade, estado} = req.body;
+    console.log('Dados recebidos do frontend:', {nome, cpf, telefone, data_cadastro, cep, logradouro, bairro, cidade, estado});
 
-    create (nome, cpf, telefone, data_cadastro, (err, result) => {
+    create (nome, cpf, telefone, data_cadastro, cep, logradouro, bairro, cidade, estado, (err, result) => {
         if (err) {
             res.status(500).json({ error: err.message });
             return;

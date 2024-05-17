@@ -1,12 +1,18 @@
 import { useState } from 'react';
-import './App.css';
+import '../styles/App.css';
 
 function FormCadastro() {
   const [formValores, setFormValores] = useState({
     nome: '',
     cpf: '',
     telefone: '',
-    data_cadastro: ''
+    data_cadastro: '',
+    cep: '',
+    logradouro: '',
+    bairro: '',
+    cidade: '',
+    estado: ''
+
   });
 
   const handleChange = (e) => {
@@ -80,7 +86,53 @@ function FormCadastro() {
                 onChange={handleChange}
               />
               <br />
-              <button type="submit"> CADASTRAR </button>
+
+              Digite o CEP:
+              <input
+                type="text"
+                name="cep"
+                value={formValores.cep}
+                onChange={handleChange}
+                />
+                <br></br>
+
+              Logradouro: 
+              <input
+              type="text"
+              name="logradouro"
+              value={formValores.logradouro}
+              onChange={handleChange}
+              />
+              <br></br>
+
+              Bairro:
+              <input
+              type="text"
+              name="bairro"
+              value={formValores.bairro}
+              onChange={handleChange}
+              />
+              <br></br>
+
+              Cidade:
+              <input
+              type="text"
+              name="cidade"
+              value={formValores.cidade}
+              onChange={handleChange}
+              />
+              <br></br>
+
+              Estado:
+              <input
+              type="text"
+              name="estado"
+              value={formValores.estado}
+              onChange={handleChange}
+              />
+              <br></br>
+              
+             <button type="submit"> CADASTRAR </button>
             </form>
           </div>
         </div>
