@@ -50,10 +50,11 @@ function FormCadastro() {
   return (
     <>
       <div>
-        <div className="Container">
+        <div className="Container_form">
           <div className="form">
             <h1> Cadastre-se </h1>
             <form onSubmit={handleSubmit}>
+              <div className="div_dados">
               Nome:
               <input
                 type="text"
@@ -85,8 +86,9 @@ function FormCadastro() {
                 value={formValores.data_cadastro}
                 onChange={handleChange}
               />
+              </div>
               <br />
-
+              <div className="div_endereco"> 
               Digite o CEP:
               <input
                 type="text"
@@ -131,7 +133,7 @@ function FormCadastro() {
               onChange={handleChange}
               />
               <br></br>
-              
+              </div>
              <button type="submit"> CADASTRAR </button>
             </form>
           </div>
