@@ -1,35 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #F8F9FA; /* Cinza Claro */
+  color: #333333; /* Cinza Escuro */
+}
 
 /* Topo */
 header {
-  
-  background-color: #6FA8DC;
-  margin: 0;
-  padding: 0;
-  border: 1px solid;
-  border-color: black;
-  font-family: "Montserrat", sans-serif;
+  background-color: #003366; /* Cor de fundo do cabeçalho */
+  padding: 20px 0; /* Espaçamento superior e inferior */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para o cabeçalho */
 }
 
 .container_nav {
   display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px; /* Largura máxima do contêiner */
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+  padding: 0 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
 }
 
-.container_nav img {
-  width: 10%;
-  padding: 10px;
-  border-radius: 15px;
+.logo {
+  width: 100px; /* Ajuste conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 20px; /* Espaçamento à direita da logo */
 }
 
 h1 {
-  font-size: medium;
-  text-align: center;
-  font-weight: bolder;
+  font-size: 24px; /* Tamanho da fonte do título */
+  color: #FFFFFF; /* Cor do texto */
+  margin: 0; /* Remove margens padrão */
+  line-height: 1.4; /* Espaçamento entre linhas */
+  font-weight: normal; /* Peso da fonte */
 }
 
 /*.logo {
@@ -58,33 +64,97 @@ h1 {
 
 /* formulario */
 
-.Container_form{
+.Container_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
 
-  background-color: #f8f9f9;
+.form {
+  width: 80%; /* Ajuste conforme necessário */
+  max-width: 800px; /* Ajuste conforme necessário */
+  background: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form h1 {
+  font-size: 24px;
+  color: #003366; /* Azul Escuro */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form_row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.div_dados, .div_endereco {
+  flex: 1;
+  min-width: 300px; /* Ajuste conforme necessário */
+  margin: 10px;
+}
+
+input {
   width: 100%;
+  padding: 15px 15px 15px 45px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid #CCCCCC; /* Cinza Médio */
+  border-radius: 4px;
 }
 
+.input_container {
+  position: relative;
+}
 
-.div_endereco
-{
-  width: 38%;
-  display: inline-block;
-  background-color: rgb(221, 212, 212);
-  font-size: 3vw;
+.input_icon {
+position: absolute;
+padding: 20px;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #006633; /* Verde Escuro */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #004d26;
+}
+
+/* visualizacao.jsx*/
+
+.h1_visualizacao {
+  color: #333333;
+  font-weight: bold;
   text-align: center;
-  padding: 5vw 0vw 5vw 0vw;
-  min-width:40vw;
-  
+  margin: 10px;
 
 }
 
-.div_dados{
-  width: 38%;
-  background-color: rgb(212, 220, 212);
-  display: inline-block;
-  margin-right: 0vw;
-  font-size: 3vw;
-  text-align: center;
-  padding: 5vw 0vw 5vw 0vw;
-  min-width:40vw;
+table,
+th, td {
+  border: 2px solid;
+}
+
+th {
+  background-color: #d3d8df;
+ 
+}
+.container_tabela {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }

@@ -1,7 +1,9 @@
 
 import '../views/styles/App.css'
-import FormCadastro from './components/FormCadastro'
+import FormAtualizacao from './components/atualizarPessoa'
 import Topo from './components/topo'
+import Visualizacao from './components/visualizacao'
+
 function App() {
   
 
@@ -9,7 +11,7 @@ function App() {
     <>
       <div>
         <Topo/>
-        <FormCadastro />
+        <FormAtualizacao />
        </div>
     </>
   )

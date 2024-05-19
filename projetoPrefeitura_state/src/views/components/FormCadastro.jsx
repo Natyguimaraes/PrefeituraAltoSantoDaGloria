@@ -1,5 +1,14 @@
 import { useState } from 'react';
 import '../styles/App.css';
+import { FaUser,
+  FaIdCard,
+  FaPhone,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaRoad,
+  FaBuilding,
+  FaCity,
+  FaFlag } from 'react-icons/fa';
 
 function FormCadastro() {
   const [formValores, setFormValores] = useState({
@@ -49,97 +58,123 @@ function FormCadastro() {
 
   return (
     <>
-      <div>
-        <div className="Container_form">
-          <div className="form">
-            <h1> Cadastre-se </h1>
-            <form onSubmit={handleSubmit}>
-              <div className="div_dados">
-              Nome:
-              <input
+  <div>
+    <div className="Container_form">
+      <div className="form">
+        <h1> Registro de Munícipes </h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form_row">
+            <div className="div_dados">
+            <div className="input_container">
+              <FaUser className="input_icon"/>
+              <input 
                 type="text"
                 name="nome"
+                placeholder="Nome"
                 value={formValores.nome}
-                onChange={handleChange}
+                onChange={handleChange}  
               />
-              <br />
-              CPF:
+              </div>
+            
+              <div className="input_container">
+                <FaIdCard className="input_icon"/>
               <input
                 type="text"
                 name="cpf"
+                placeholder="CPF"
                 value={formValores.cpf}
                 onChange={handleChange}
               />
-              <br />
-              Telefone:
+              </div>
+             
+              <div className="input_container">
+                <FaPhone className="input_icon" />
               <input
                 type="text"
                 name="telefone"
+                placeholder="Telefone"
                 value={formValores.telefone}
                 onChange={handleChange}
               />
-              <br />
-              Data de Cadastro:
+              </div>
+              
+              <div className="input_container">
+                <FaCalendarAlt className="input_icon" />
               <input
                 type="date"
                 name="data_cadastro"
+                placeholder="Data de Cadastro"
                 value={formValores.data_cadastro}
                 onChange={handleChange}
               />
               </div>
-              <br />
-              <div className="div_endereco"> 
-              Digite o CEP:
+              </div>
+              
+            <div className="div_endereco"> 
+            <div className="input_container">
+                <FaMapMarkerAlt className="input_icon" />
               <input
                 type="text"
                 name="cep"
+                placeholder="Digite o CEP"
                 value={formValores.cep}
                 onChange={handleChange}
-                />
-                <br></br>
-
-              Logradouro: 
-              <input
-              type="text"
-              name="logradouro"
-              value={formValores.logradouro}
-              onChange={handleChange}
               />
-              <br></br>
-
-              Bairro:
-              <input
-              type="text"
-              name="bairro"
-              value={formValores.bairro}
-              onChange={handleChange}
-              />
-              <br></br>
-
-              Cidade:
-              <input
-              type="text"
-              name="cidade"
-              value={formValores.cidade}
-              onChange={handleChange}
-              />
-              <br></br>
-
-              Estado:
-              <input
-              type="text"
-              name="estado"
-              value={formValores.estado}
-              onChange={handleChange}
-              />
-              <br></br>
               </div>
-             <button type="submit"> CADASTRAR </button>
-            </form>
+
+              <div className="input_container">
+                <FaRoad className="input_icon" />
+              <input
+                type="text"
+                name="logradouro"
+                placeholder="Logradouro"
+                value={formValores.logradouro}
+                onChange={handleChange}
+              />
+              </div>
+              
+              <div className="input_container">
+                <FaBuilding className="input_icon" />
+              <input
+                type="text"
+                name="bairro"
+                placeholder="Bairro"
+                value={formValores.bairro}
+                onChange={handleChange}
+              />
+              </div>
+              
+              <div className="input_container">
+                <FaCity className="input_icon" />
+              <input
+                type="text"
+                name="cidade"
+                placeholder="Cidade"
+                value={formValores.cidade}
+                onChange={handleChange}
+              />
+              </div>
+              
+              <div className="input_container">
+                <FaFlag className="input_icon" />
+              <input
+                type="text"
+                name="estado"
+                placeholder="Estado"
+                value={formValores.estado}
+                onChange={handleChange}
+              />
+              </div>
+            </div>
           </div>
-        </div>
+          <button type="submit"> CADASTRAR </button>
+        </form>
       </div>
-    </>
+    </div>
+  </div>
+</>
+
+  
   );
 }
 
