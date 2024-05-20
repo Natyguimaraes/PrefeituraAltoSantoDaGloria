@@ -5,8 +5,7 @@ const connection = mysql.createConnection({
     user:'root',
     password:'123456789',
     database:'front_back'
-});
-
+})
 connection.connect((err) => {
     if (err) {
         console.error('erro ao realizar conexão com o banco de dados', err);

@@ -30,7 +30,7 @@ export async function getAllPessoas(req, res) {
 //realizando atualização
 
 export async function updatePessoa(req, res){
-    const {id} = req .params;
+    const { id } = req .params;
     const novosDados = req.body;
     update(id, novosDados, (err, result) => {
         if (err) {
