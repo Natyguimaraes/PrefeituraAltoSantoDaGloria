@@ -1,8 +1,8 @@
 
 import '../views/styles/App.css'
-import FormAtualizacao from './components/atualizarPessoa'
 import Topo from './components/topo'
-import Visualizacao from './components/visualizacao'
+import Home from './components/home';
+
 
 function App() {
   
@@ -11,10 +11,10 @@ function App() {
     <>
       <div>
         <Topo/>
-        <FormAtualizacao />
+        <Home/>
        </div>
     </>
   )
 }
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
 import {create, read, update, deletePes} from '../models/pessoaModel.js';
-
+import connection from '../database/db.js';
 //Realizando insert (create)
 
 export async function createPessoa(req, res){

@@ -10,8 +10,8 @@ app.use(cors());
 
 app.get('/pessoas', getAllPessoas);
 app.post('/pessoas', createPessoa);
-app.put('/pessoas/:id', updatePessoa);
-app.delete('/pessoas/:id', deletePessoa);
+app.put('/pessoas/:idPesquisa', updatePessoa);
+app.delete('/pessoas/:idPesquisa', deletePessoa);
 
 app.listen(3000, () => {
     console.log(`Servidor rodando com sucesso na porta 3000`);
