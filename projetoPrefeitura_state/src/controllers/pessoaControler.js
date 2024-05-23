@@ -1,5 +1,5 @@
-import {create, read, update, deletePes} from '../models/pessoaModel.js';
-import connection from '../database/db.js';
+import {create, read, readF, update, deletePes} from '../models/pessoaModel.js';
+
 //Realizando insert (create)
 
 export async function createPessoa(req, res){
@@ -27,6 +27,16 @@ export async function getAllPessoas(req, res) {
     });
 }
 
+export async function getPessoasF(req, res) {
+    const { id } = req.params;
+    readF(id, (err, pessoas) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json(pessoas);
+    });
+}
 //realizando atualização
 
 export async function updatePessoa(req, res){
@@ -46,6 +56,7 @@ export async function updatePessoa(req, res){
 
 export async function deletePessoa(req, res) {
     const { id } = req.params;
+    console.log('delete recebidos do frontend: ', {id});
     deletePes(id, (err, result) => {
         if(err) {
             res.status(500).json({error: err.mensage});

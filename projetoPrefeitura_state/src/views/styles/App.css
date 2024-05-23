@@ -161,11 +161,27 @@ th {
 
 /* tela home */
 
-.containerHome {
 
-  display: flex;
-  flex-direction: column;
-  background-color: #004d26;
-  width: 70vh;
-  align-items: center;
+.containerHome {
+width: 100%;
+display: flex;
+justify-content: center;
+
 }
+
+.title_home {
+text-align: center;
+color: black;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.botao-menu {
+  margin: 15px;
+  font-weight: bold;
+}
+

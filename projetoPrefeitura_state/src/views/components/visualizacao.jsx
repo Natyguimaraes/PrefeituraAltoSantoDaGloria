@@ -34,7 +34,11 @@ function Visualizacao() {
             <th>CPF</th>
             <th>Telefone</th>
             <th>Data de Cadastro</th>
-            {/* Adicione outras colunas conforme necessário */}
+            <th> CEP </th>
+            <th> Logradouro </th>
+            <th> Bairro </th>
+            <th> Cidade </th>
+            <th> Estado </th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +49,11 @@ function Visualizacao() {
               <td>{item.cpf}</td>
               <td>{item.telefone}</td>
               <td>{item.data_cadastro}</td>
-              {/* Adicione outras células conforme necessário */}
+              <td>{item.cep}</td>
+              <td>{item.logradouro}</td>
+              <td>{item.bairro}</td>
+              <td>{item.cidade}</td>
+              <td>{item.estado}</td>
             </tr>
           ))}
         </tbody>

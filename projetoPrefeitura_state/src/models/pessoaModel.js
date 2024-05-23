@@ -23,6 +23,6 @@ export function update(id, novoDados, callback) {
 
 export function deletePes(id, callback){
 
-    connection.query('UPDATE pessoa SET ativo_pessoa = 0 WHERE id = ?', [id], callback);
+    connection.query('DELETE from front_back.pessoa where id = ?', [id], callback);
 
 }

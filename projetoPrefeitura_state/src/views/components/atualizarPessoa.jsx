@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/App.css';
 
 function FormAtualizacao() {
-  const [idPesquisa, setIdPesquisa] = useState('');
+  const [id, setId] = useState('');
   const [formValores, setFormValores] = useState({
     nome: '',
     cpf: '',
@@ -20,14 +20,14 @@ function FormAtualizacao() {
 
   const handlePesquisaSubmit = async (e) => {
     e.preventDefault();
-    if (!idPesquisa) {
+    if (!id) {
       setError('Por favor, insira um ID válido.');
       return;
     }
     setLoading(true);
     setError('');
     try {
-      const response = await fetch(`http://localhost:3000/pessoas/${idPesquisa}`);
+      const response = await fetch(`http://localhost:3000/pessoas/${formValores.id}`);
       if (!response.ok) {
         throw new Error(`Erro ao obter os dados da pessoa: ${response.status}`);
       }
@@ -59,7 +59,7 @@ function FormAtualizacao() {
     setError('');
     setSuccess('');
     try {
-      const response = await fetch(`http://localhost:3000/pessoas/${idPesquisa}`, {
+      const response = await fetch(`http://localhost:3000/pessoas/${formValores.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -88,8 +88,8 @@ function FormAtualizacao() {
             <input 
               type="text"
               id="id"
-              value={idPesquisa}
-              onChange={(e) => setIdPesquisa(e.target.value)}
+              value={formValores.id}
+              onChange={(e) => setId(e.target.value)}
             />
             <button type="submit" disabled={loading}>Pesquisar</button>
           </div>
