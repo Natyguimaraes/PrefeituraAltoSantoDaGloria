@@ -27,7 +27,7 @@ function FormAtualizacao() {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch(`http://localhost:3000/pessoas/${formValores.id}`);
+      const response = await fetch(`http://localhost:3000/pessoas/${id}`);
       if (!response.ok) {
         throw new Error(`Erro ao obter os dados da pessoa: ${response.status}`);
       }
@@ -44,6 +44,7 @@ function FormAtualizacao() {
       setLoading(false);
     }
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;

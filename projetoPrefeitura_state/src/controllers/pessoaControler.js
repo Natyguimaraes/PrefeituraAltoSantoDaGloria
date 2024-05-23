@@ -1,4 +1,4 @@
-import {create, read, readF, update, deletePes} from '../models/pessoaModel.js';
+import {create, read, update, deletePes} from '../models/pessoaModel.js';
 
 //Realizando insert (create)
 
@@ -29,12 +29,14 @@ export async function getAllPessoas(req, res) {
 
 export async function getPessoasF(req, res) {
     const { id } = req.params;
-    readF(id, (err, pessoas) => {
+    
+    // Chame a função read para buscar uma pessoa específica pelo ID
+    read(id, (err, pessoa) => {
         if (err) {
             res.status(500).json({ error: err.message });
             return;
         }
-        res.json(pessoas);
+        res.json(pessoa);
     });
 }
 //realizando atualização
@@ -59,7 +61,7 @@ export async function deletePessoa(req, res) {
     console.log('delete recebidos do frontend: ', {id});
     deletePes(id, (err, result) => {
         if(err) {
-            res.status(500).json({error: err.mensage});
+            res.status(500).json({error: err.message});
             return;
         }
         res.send('Pessoa excluída com sucesso');

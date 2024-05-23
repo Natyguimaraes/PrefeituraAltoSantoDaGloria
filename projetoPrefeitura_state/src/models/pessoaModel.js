@@ -13,8 +13,14 @@
 }
 
 export function create(nome, cpf, telefone, data_cadastro, cep, logradouro, bairro, cidade, estado, callback){
+    if (typeof callback !== 'function') {
+        console.error('O argumento de callback não é uma função.');
+        return;
+    }
     connection.query('INSERT INTO pessoa (nome, cpf, telefone, data_cadastro, cep, logradouro, bairro, cidade, estado) VALUES (?, ?, ?, ?, ?, ?,?,?,?)', [nome, cpf, telefone, data_cadastro, cep, logradouro, bairro, cidade, estado], callback);
 }
+
+
 
 export function update(id, novoDados, callback) {
     connection.query('UPDATE pessoa SET ? WHERE id = ?', [novoDados, id], callback);
