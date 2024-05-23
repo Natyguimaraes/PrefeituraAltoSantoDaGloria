@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/App.css';
+import Home from './home';
 
 
 function Visualizacao() {
+
+  const [secaoAtual, setSecaoAtual] = useState('visualizacao');
+    
+        const cliqueSecao = (secao) => {
+            setSecaoAtual(secao);
+        };
+
   const [dadosCadastrados, setDadosCadastrados] = useState([]);
 
   useEffect(() => {
@@ -24,41 +32,52 @@ function Visualizacao() {
 
   return (
     <div>
-     <div className="container_tabela">
-     <h1 className="h1_visualizacao"> Dados Cadastrados </h1>
-      <table>
-        <thead>
-          <tr>
-          <th>Id</th>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Telefone</th>
-            <th>Data de Cadastro</th>
-            <th> CEP </th>
-            <th> Logradouro </th>
-            <th> Bairro </th>
-            <th> Cidade </th>
-            <th> Estado </th>
-          </tr>
-        </thead>
-        <tbody>
-          {dadosCadastrados.map((item, index) => (
-            <tr key={index}>
-                <td>{item.id}</td>
-              <td>{item.nome}</td>
-              <td>{item.cpf}</td>
-              <td>{item.telefone}</td>
-              <td>{item.data_cadastro}</td>
-              <td>{item.cep}</td>
-              <td>{item.logradouro}</td>
-              <td>{item.bairro}</td>
-              <td>{item.cidade}</td>
-              <td>{item.estado}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      </div>
+      {secaoAtual === 'visualizacao' && (
+     <><div className="container_tabela">
+          <h1 className="h1_visualizacao"> Dados Cadastrados </h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Data de Cadastro</th>
+                <th> CEP </th>
+                <th> Logradouro </th>
+                <th> Bairro </th>
+                <th> Cidade </th>
+                <th> Estado </th>
+              </tr>
+            </thead>
+            <tbody>
+              {dadosCadastrados.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.id}</td>
+                  <td>{item.nome}</td>
+                  <td>{item.cpf}</td>
+                  <td>{item.telefone}</td>
+                  <td>{item.data_cadastro}</td>
+                  <td>{item.cep}</td>
+                  <td>{item.logradouro}</td>
+                  <td>{item.bairro}</td>
+                  <td>{item.cidade}</td>
+                  <td>{item.estado}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div><div className="home_voltar2">
+            <button className="button_home_voltar" onClick={() => cliqueSecao('home')}> Voltar a página inicial </button>
+          </div></>
+
+      )}
+
+<div className='secao'>
+        {secaoAtual === 'home' && <Home />}
+    </div>
+
+
     </div>
   );
 }

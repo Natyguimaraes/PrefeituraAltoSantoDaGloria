@@ -18,24 +18,24 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px; /* Largura máxima do contêiner */
-  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
-  padding: 0 20px; /* Espaçamento interno */
-  text-align: center; /* Centraliza o texto */
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center; 
 }
 
 .logo {
-  width: 100px; /* Ajuste conforme necessário */
-  height: auto; /* Mantém a proporção da imagem */
-  margin-right: 20px; /* Espaçamento à direita da logo */
+  width: 100px; 
+  height: auto; 
+  margin-right: 20px; 
 }
 
 h1 {
-  font-size: 24px; /* Tamanho da fonte do título */
-  color: #FFFFFF; /* Cor do texto */
-  margin: 0; /* Remove margens padrão */
-  line-height: 1.4; /* Espaçamento entre linhas */
-  font-weight: normal; /* Peso da fonte */
+  font-size: 24px; 
+  color: #FFFFFF; 
+  margin: 0; 
+  line-height: 1.4; 
+  font-weight: normal; 
 }
 
 /*.logo {
@@ -94,7 +94,7 @@ h1 {
 
 .div_dados, .div_endereco {
   flex: 1;
-  min-width: 300px; /* Ajuste conforme necessário */
+  min-width: 300px; 
   margin: 10px;
 }
 
@@ -104,7 +104,7 @@ input {
   margin: 5px 0;
   box-sizing: border-box;
   border: 0;
-  border-bottom: 1px solid #CCCCCC; /* Cinza Médio */
+  border-bottom: 1px solid #CCCCCC;
   border-radius: 4px;
 }
 
@@ -172,6 +172,7 @@ justify-content: center;
 .title_home {
 text-align: center;
 color: black;
+
 }
 
 .options {
@@ -181,7 +182,38 @@ color: black;
 }
 
 .botao-menu {
-  margin: 15px;
+  margin: 1px;
   font-weight: bold;
+  border: 2px solid;
+  border-color:#333333
 }
 
+.home_voltar,
+.home_voltar2,
+.home_voltar3 
+ { 
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: -70px;
+}
+
+.home_voltar2 {
+ 
+  margin-top: -30px;
+}
+.home_voltar3 {
+  
+  margin-top: -10px;
+}
+
+.button_home_voltar {
+  width: 10%;
+  background-color: #CCCCCC;
+  color: #333333;
+  border: 0;
+}
+
+.button_home_voltar:hover {
+  color: #CCCCCC;
+}
