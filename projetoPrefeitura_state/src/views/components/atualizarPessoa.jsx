@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import '../styles/App.css';
 
 function FormAtualizacao() {
-  const [id, setId] = useState('');
+  
   const [formValores, setFormValores] = useState({
+    id:'',
     nome: '',
     cpf: '',
     telefone: '',
@@ -14,38 +15,7 @@ function FormAtualizacao() {
     cidade: '',
     estado: ''
   });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-
-  const handlePesquisaSubmit = async (e) => {
-    e.preventDefault();
-    if (!id) {
-      setError('Por favor, insira um ID válido.');
-      return;
-    }
-    setLoading(true);
-    setError('');
-    try {
-      const response = await fetch(`http://localhost:3000/pessoas/${id}`);
-      if (!response.ok) {
-        throw new Error(`Erro ao obter os dados da pessoa: ${response.status}`);
-      }
-      const dados = await response.json();
-      if (!dados) {
-        setError('Nenhum dado encontrado para o ID fornecido.');
-      } else {
-        setFormValores(dados);
-        setSuccess('');
-      }
-    } catch (err) {
-      setError("Erro ao obter os dados da pessoa: " + err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
   
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValores((prevState) => ({
@@ -56,50 +26,44 @@ function FormAtualizacao() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError('');
-    setSuccess('');
+    
     try {
+      console.log("Dados a serem enviados: ", formValores.id);
       const response = await fetch(`http://localhost:3000/pessoas/${formValores.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formValores)
-      });
-      if (!response.ok) {
-        throw new Error(`Erro ao atualizar os dados da pessoa: ${response.status}`);
-      }
-      setSuccess('Pessoa atualizada com sucesso');
+     });
+
+     const json = await response.json();
+     console.log(response)
+     console.log(json);
+
     } catch (err) {
-      setError("Erro ao atualizar os dados da pessoa: " + err.message);
-    } finally {
-      setLoading(false);
+      console.error("Erro ao enviar", err)
     }
   };
   
-
   return (
     <div className="Container_form">
       <div className="form">
         <h1>Atualização de Registro</h1>
-        <form onSubmit={handlePesquisaSubmit}>
-          <div className="form_row">
-            <label htmlFor="id">Pesquisar por ID:</label>
-            <input 
-              type="text"
-              id="id"
-              value={formValores.id}
-              onChange={(e) => setId(e.target.value)}
-            />
-            <button type="submit" disabled={loading}>Pesquisar</button>
-          </div>
-          {error && <p className="error">{error}</p>}
-          {loading && <p>Carregando...</p>}
-        </form>
+        
         <form onSubmit={handleSubmit}>
           <div className="form_row">
             <div className="div_dados">
+              <div className="input_container">
+                <label htmlFor="nome">ID a ser atualizado:</label>
+                <input 
+                  type="text"
+                  id="id"
+                  name="id"
+                  value={formValores.id}
+                  onChange={handleChange}  
+                />
+              </div>
               <div className="input_container">
                 <label htmlFor="nome">Nome:</label>
                 <input 
@@ -194,8 +158,7 @@ function FormAtualizacao() {
               </div>
             </div>
           </div>
-          <button type="submit" disabled={loading}>ATUALIZAR</button>
-          {success && <p className="success">{success}</p>}
+          <button type="submit" onClick={handleSubmit}>ATUALIZAR</button>
         </form>
       </div>
     </div>

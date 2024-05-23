@@ -42,15 +42,22 @@ export async function getPessoasF(req, res) {
 //realizando atualização
 
 export async function updatePessoa(req, res){
-    const { id } = req .params;
+    const { id } = req.params;
     const novosDados = req.body;
     update(id, novosDados, (err, result) => {
         if (err) {
-            res.status(500).json ({ error: err.message});
+            res.status(500).json ({ error: err.message });
             return;
         }
 
-        res.send('Pessoa atualizada com sucesso');
+        // para verificar se houve alterações
+        if (result.affectedRows === 0) {
+            res.status(404).json({ error: 'Nenhuma pessoa encontrada para atualizar.' });
+            return;
+        }
+
+        // Se chegou aqui, a pessoa foi atualizada com sucesso
+        res.status(200).json({ message: 'Pessoa atualizada com sucesso' });
     });
 }
 
