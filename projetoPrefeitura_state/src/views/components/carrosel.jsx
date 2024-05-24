@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 
 function Carrossel() {
-    const imagens = ['banner1.jpg', 'banner2.jpg', 'banner3.jpg'];
+    const imagens = ['banner1(2) (1).jpg', 'banner2.jpg', 'banner3.jpg'];
     const [indiceAtual, setIndiceAtual] = useState(0);
 
     const proximoSlide = () => {
