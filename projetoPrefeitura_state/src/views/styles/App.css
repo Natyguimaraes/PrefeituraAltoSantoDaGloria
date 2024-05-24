@@ -163,29 +163,38 @@ th {
 
 
 .containerHome {
-width: 100%;
-display: flex;
-justify-content: center;
-
+  width: 50%; 
+  margin: 4% auto;  
 }
+
 
 .title_home {
 text-align: center;
 color: black;
+margin-top: 10%;
 
 }
 
 .options {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 3px 3px 15px 3px;
 }
 
 .botao-menu {
-  margin: 1px;
+  margin: 5px;
   font-weight: bold;
   border: 2px solid;
-  border-color:#333333
+  border-color:#333333;
+ 
+}
+
+.botao-menu:hover {
+  border-color: #ffffff;
+  margin: 8px;
 }
 
 .home_voltar,
@@ -216,4 +225,29 @@ color: black;
 
 .button_home_voltar:hover {
   color: #CCCCCC;
+}
+
+.carrossel {
+  margin: 5px;
+  border-radius: 10px;
+  width: 100%;
+margin-top: 20px;
+
+}
+
+.botoes {
+
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  height: 15px;
+  cursor: pointer;
+}
+
+#passar_button{
+  width: 30px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  margin: 5px;
+  border: 1px solid rgb(245, 245, 245);
 }

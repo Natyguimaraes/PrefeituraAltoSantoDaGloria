@@ -21,7 +21,6 @@ export function create(nome, cpf, telefone, data_cadastro, cep, logradouro, bair
 }
 
 
-
 export function update(id, novoDados, callback) {
     connection.query('UPDATE pessoa SET ? WHERE id = ?', [novoDados, id], callback);
 

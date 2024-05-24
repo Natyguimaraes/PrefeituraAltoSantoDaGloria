@@ -4,6 +4,7 @@ import FormCadastro from './FormCadastro';
 import Visualizacao from './visualizacao';
 import FormAtualizacao from './atualizarPessoa';
 import FormDeleta from './deletarPessoa';
+import Carrossel from './carrosel';
 
 function Home() {
 
@@ -17,19 +18,20 @@ const cliqueSecao = (secao) => {
 
         <div>
             {secaoAtual == 'home' && (
-                <><h1 className="title_home"> Selecione uma opção </h1>
-                <div className="containerHome">
-                    <div className="options">
+                <><div className="carrossel">
+                    <Carrossel />
+                </div><h1 className="title_home"> Selecione uma opção </h1><div className="containerHome">
+                        <div className="options">
 
-                    
-                        <button onClick={() => cliqueSecao('FormCadastro')} className='botao-menu'> Cadastrar/ C </button>
-                        
-                        <button onClick={() => cliqueSecao('visualizacao')} className='botao-menu'> Visualizar cadastros/ R </button>
-                        <button onClick={() => cliqueSecao('atualizarPessoa')} className='botao-menu'> Atualizar dados/ U </button>
-                        <button onClick={() => cliqueSecao('deletarPessoa')} className='botao-menu'> Deletar dados/ D </button>
+
+                            <button onClick={() => cliqueSecao('FormCadastro')} className='botao-menu'> CADASTRAR (C) </button>
+
+                            <button onClick={() => cliqueSecao('visualizacao')} className='botao-menu'> VISUALIZAR (R) </button>
+                            <button onClick={() => cliqueSecao('atualizarPessoa')} className='botao-menu'> ATUALIZAR (U) </button>
+                            <button onClick={() => cliqueSecao('deletarPessoa')} className='botao-menu'> DELETAR (D) </button>
                         </div>
 
-                </div></>
+                    </div></>
             )}
             <div>
                
